@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATV2 | <%= title %>
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Poppins:wght@700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header id="header">
+    <h1 id="logo">
+      CRUD DE FILMES
+      <span></span>
+    </h1>
+
+  </header>
+  <section class="container">
+    <form action="<%= action %>" method="POST">
+      <div class="formItem">
+        <label for="titulo">Título do Filme</label>
+        <input type="text" name="titulo" id="titulo" value="<%= doc.titulo %>" />
+      </div>
+      <br />
+      <div class="formItem">
+        <label for="sinopse">Sinopse do Filme</label>
+        <textarea name="sinopse" id="sinopse" cols="30" rows="10">
+<%= doc.sinopse %></textarea>
+      </div>
+      <br />
+      <div class="formItem">
+        <label for="duracao">Duração do Filme (h)</label>
+        <input type="number" name="duracao" id="duracao" value="<%= doc.duracao %>" />
+      </div>
+      <br />
+      <div class="formItem">
+        <label for="dataLancamento">Data Lançamento do Filme</label>
+        <input type="text" name="dataLancamento" id="dataLancamento" value="<%= doc.dataLancamento %>" />
+      </div>
+      <br />
+      <div class="formItem">
+        <label for="categorias">Categorias do Filme</label>
+        <input type="text" name="categorias" id="categorias" value="<%= doc.categorias %>" />
+      </div>
+      <br />
+      <div class="options">
+        <input type="submit" value="Salvar" class="button save" />
+        <br /><br />
+        <a href="/delete/<%= doc._id %>" class="button delete">Excluir</a>
+      </div>
+    </form>
+  </section>
+  <br /><br /><br />
+  <a href="/" class="button">Voltar ao Home</a>
+</body>
+
+</html>
